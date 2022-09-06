@@ -1,76 +1,58 @@
-<header class="header js-header header-container_home">
-  <div class="container">
-    <!-- фільтр -->
-    <div class="divForFilters">
-      <select
-        name=""
-        id=""
-        label=""
-        class="select js-select"
-        onfocus="this.size=4;"
-        onblur="this.size=1;"
-        onchange="this.size=1; this.blur();"
-      ></select>
-    </div>
-
-    <nav class="header-nav js-header-nav">
-      <a class="logo link js-logo" href="#">
-        <svg class="logo-icon">
+<header class="header container">
+  <!-- header-container_lib -->
+  <div class="header-container">
+    <nav class="nav">
+      <a class="logo-link" href="">
+        <svg class="logo-icon" width="24" height="24">
           <use href="/src/images/svg-sprite.svg#icon-film"></use>
         </svg>
         <span class="logo-text">Filmoteka</span>
       </a>
-      <ul class="navigation-menu-list list">
-        <li class="navigation-list-link">
-          <a
-            class="link navigation-menu-link current js-home_page"
-            id="home"
-            href=""
-            >Home</a
-          >
+
+      <ul class="nav-list">
+        <li class="nav-list-item">
+          <a id="home" class="nav-link current" href="">home</a>
         </li>
-        <li class="navigation-list-link">
-          <a class="link navigation-menu-link js-lib_page" href="#"
-            >My library</a
-          >
+        <li class="nav-list-item">
+          <a id="library" class="nav-link" href="">my library</a>
         </li>
       </ul>
     </nav>
-
     <div class="search">
-      <form class="search-form js-search-form">
+      <form class="search-form">
         <input
-          class="search-control js-search-control"
+          class="search-input"
           type="text"
-          name="query"
+          name="searchQuery"
           autocomplete="off"
-          placeholder="Search movies..."
+          placeholder="Movie search"
         />
-        <button class="search__btn" type="submit">
-          <svg class="search-icon">
-            <use></use>
+        <button type="submit" class="search-btn">
+          <svg class="icon-search" width="12" height="12">
+            <use href="/src/images/svg-sprite.svg#icon-search"></use>
           </svg>
         </button>
-        <div class="warning visually-hidden">
-          Search result not successful. Enter the correct movie name and
-        </div>
       </form>
     </div>
-    <div class="buttons js-buttons visually-hidden">
-      <button
-        class="button_lib btn_watched active-btn js-btn_watched"
-        data-libType="watched"
-        type="button"
-      >
-        Watched
-      </button>
-      <button
-        class="button_lib btn_queue js-btn_queue"
-        type="button"
-        data-libType="queue"
-      >
-        Queue
-      </button>
+    <div class="warning-message visually-hidden">
+      <!-- Search result not successful. Enter the correct movie name and -->
+      Search result not successful. Enter the correct movie name and try again.
     </div>
+    <ul class="library-btn-list visually-hidden">
+      <li class="library-btn-item">
+        <button
+          class="library-btn active-btn"
+          type="button"
+          data-library="watched"
+        >
+          Watched
+        </button>
+      </li>
+      <li class="library-btn-item">
+        <button class="library-btn" type="button" data-library="queue">
+          Queue
+        </button>
+      </li>
+    </ul>
   </div>
 </header>
